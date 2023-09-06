@@ -31,7 +31,7 @@ scp_choice() {
     read -p "Please enter the path to the source file: " srcFile
     read -p "Please enter the path to the destination file: " desFile
 
-    #create a if else statement for the user choice of path
+    # Create an if-else statement for the user's choice of path
     if [ "$ab" == 'a' ]; then
         # scp condition for remote to local
         scp "$remoteUser@$remoteIP":"$srcFile" "$desFile"
@@ -49,9 +49,9 @@ scp_choice() {
 
 
 # Now that we have two functions (one for ssh and one for scp), we can ask the user what they want
-# we start a while loop
+# We start a while loop
 while true; do
-    # Ask the use to pick a valid option
+    # Ask the user to pick a valid option
     read -p "Please enter one of the following options (ssh, scp, exit): " options
 
     # Here we will give an action depending on what the user picks
@@ -70,7 +70,7 @@ while true; do
         break
         ;;
     *)
-        # * is to catch if any other input beside the given option is entered
+        # * is to catch if any input beside the given option is entered
         echo "Not a valid option. Please pick 'ssh', 'scp', or 'exit'."
         ;;
     esac
