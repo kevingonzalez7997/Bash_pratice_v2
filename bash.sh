@@ -8,28 +8,28 @@
 ssh_choice() {
     echo "You have picked ssh"
     # Ask for remote IP and username and use -p to store it in a variable
-    read -p "Please enter the remote IP address: " remoteIP
-    read -p "Please enter the remote username: " remoteUser
+    read -p "Please enter the remote IP address of the computer you would like to connect to: " remoteIP
+    read -p "Please enter the remote username of the computer user you are connecting to: " remoteUser
     # Run the ssh command to connect, use $ to insert variables in strings
     ssh "$remoteUser@$remoteIP"
 }
 
 # Creating a function for SCP
 scp_choice() {
-    echo "You have picked scp"
+    echo "You have picked scp, you will have to options, lets start by collecting some information"
     # Ask for remote IP and username and store them in variables
-    read -p "Please enter the remote IP address: " remoteIP
-    read -p "Please enter the remote username: " remoteUser
+    read -p "Please enter the remote IP address of the computer you will be sending data to: " remoteIP
+    read -p "Please enter the remote username of the computer you will be sending data to : " remoteUser
 
     # Ask which path the user wants to use for the file transfer (A or B)
     # Ask for the path to the source and destination files
     # Store all three answers in variables
-    echo "You can send from:"
-    echo "a: remote to local"
-    echo "b: local to remote"
+    echo "Would you like to: "
+    echo "a: send from remote computer to local"
+    echo "b: send from local to remote computer"
     read -p "Please pick 'a' or 'b': " ab
-    read -p "Please enter the path to the source file: " srcFile
-    read -p "Please enter the path to the destination file: " desFile
+    read -p "Please enter the path to the file you would like to send: " srcFile
+    read -p "Please enter the path to the file that will be sent: " desFile
 
     # Create an if-else statement for the user's choice of path
     if [ "$ab" == 'a' ]; then
