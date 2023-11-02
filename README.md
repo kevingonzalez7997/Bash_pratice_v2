@@ -1,7 +1,7 @@
 # SSH and SCP Utility
 
-Kevin Gonzalez
-2023-09-06
+### Kevin Gonzalez
+### September 6, 2023
 
 ## Description
 
